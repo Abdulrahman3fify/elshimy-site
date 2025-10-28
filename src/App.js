@@ -109,17 +109,13 @@ function App() {
           <p className="section-subtitle">Where Engineering Meets Financial Markets</p>
           <div className="about-content">
             <div className="about-text">
-              <p>The company's journey began in 2024 with trading while honing skills in market analysis. Since then, the team has dedicated the last 6+ years as traders, executing over 10,000 trading positions and serving more than 40 retail traders across Jordan, Egypt, Oman, Turkey, Saudi Arabia, and Germany.</p>
+              <p>The company's journey began in 2020 with trading while honing skills in market analysis. Since then, the team has dedicated the last 6+ years as traders, executing over 10,000 trading positions and serving more than 40 retail traders across Jordan, Egypt, Oman, Turkey, Saudi Arabia, and Germany.</p>
               
               <p>As an Introducing Broker (IB) for FOREX TIME for over 5 years, the company has built a reputation for combining technical precision with deep fundamental and economic analysis, all powered by sophisticated trading algorithms.</p>
             </div>
             
             <div>
               <ul className="expertise-list">
-                <li>
-                  <strong>🎓 Educational Background</strong>
-                  Electronics & Communications Engineering - Systematic analytical approach
-                </li>
                 <li>
                   <strong>📊 Trading Methodology</strong>
                   Fundamentals + Economic Analysis + Algorithm Trading
@@ -209,7 +205,7 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
-          <h2>Get In Touch</h2>
+          <h2>Contact Us</h2>
           <p className="section-subtitle">Ready to elevate your trading? Let's discuss your investment goals</p>
           
           <div className="contact-content">
@@ -255,27 +251,13 @@ function App() {
                   <p><a href="https://forextime.com/?Referral=35310" target="_blank" rel="noopener noreferrer" style={{color: '#3b82f6', textDecoration: 'none'}}>IB for FOREX TIME (5+ years)</a></p>
                 </div>
               </div>
-            </div>
-            
-            <div className="contact-form">
-              <h3 style={{marginBottom: '1.5rem', color: '#0f172a'}}>Get In Touch</h3>
-              <p style={{color: '#64748b', marginBottom: '2rem', fontSize: '1.1rem'}}>Ready to elevate your trading? Contact us through email or phone.</p>
               
-              <div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
-                <a 
-                  href="mailto:engineer.elshimy@gmail.com?subject=Trading Consultation Inquiry" 
-                  className="cta-button"
-                  style={{display: 'inline-block'}}
-                >
-                  📧 Send Email
-                </a>
-                <a 
-                  href="tel:+96892407907" 
-                  className="cta-button cta-secondary"
-                  style={{display: 'inline-block'}}
-                >
-                  📞 Call Us
-                </a>
+              <div className="contact-item">
+                <div className="contact-item-icon">💼</div>
+                <div>
+                  <h4>LinkedIn</h4>
+                  <p><a href="https://www.linkedin.com/company/elshimy-for-trade-and-investment/" target="_blank" rel="noopener noreferrer" style={{color: '#3b82f6', textDecoration: 'none'}}>Follow us on LinkedIn</a></p>
+                </div>
               </div>
             </div>
           </div>
@@ -285,7 +267,7 @@ function App() {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>&copy; 2024 Mahmoud Elshimy - ELSHIMY FOR TRADE AND INVESTMENT. All rights reserved.</p>
+          <p>&copy; ELSHIMY FOR TRADE AND INVESTMENT. All rights reserved.</p>
           <p style={{marginTop: '0.5rem', fontSize: '0.9rem'}}>Professional Trader | Investment Specialist | Money Expo Oman Speaker</p>
         </div>
       </footer>
