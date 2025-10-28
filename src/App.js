@@ -253,10 +253,12 @@ function App() {
               </div>
               
               <div className="contact-item">
-                <div className="contact-item-icon">💼</div>
+                <div className="contact-item-icon" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <img src="/linkedin-icon.svg" alt="LinkedIn" style={{width: '1.5rem', height: '1.5rem'}} />
+                </div>
                 <div>
                   <h4>LinkedIn</h4>
-                  <p><a href="https://www.linkedin.com/company/elshimy-for-trade-and-investment/" target="_blank" rel="noopener noreferrer" style={{color: '#3b82f6', textDecoration: 'none'}}>Follow us on LinkedIn</a></p>
+                  <p><a href="https://www.linkedin.com/company/elshimy-for-trade-and-investment/" target="_blank" rel="noopener noreferrer" style={{color: '#0a66c2', textDecoration: 'none', fontWeight: '600'}}>@ElshimyForTrade</a></p>
                 </div>
               </div>
             </div>
