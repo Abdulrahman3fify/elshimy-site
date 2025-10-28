@@ -97,7 +97,7 @@ function App() {
           </div>
           <div className="stat-item">
             <h3>6+</h3>
-            <p>Years Full-Time</p>
+            <p>Years of Trading Experience</p>
           </div>
         </div>
       </div>
