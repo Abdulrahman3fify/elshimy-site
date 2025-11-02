@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const { t, i18n } = useTranslation();
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -38,6 +39,19 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -46,6 +60,8 @@ function App() {
         behavior: 'smooth',
         block: 'start'
       });
+      // Close mobile menu after clicking
+      setMobileMenuOpen(false);
     }
   };
 
@@ -56,7 +72,18 @@ function App() {
       <nav>
         <div className="container">
           <div className="logo">ELSHIMY<span>TRADE</span></div>
-          <ul style={{display: 'flex', alignItems: 'center', gap: '2rem'}}>
+          <button 
+            className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          {mobileMenuOpen && <div className="mobile-menu-backdrop" onClick={() => setMobileMenuOpen(false)}></div>}
+          <ul className={mobileMenuOpen ? 'mobile-menu-open' : ''}>
             <li><a 
               href="#home" 
               onClick={(e) => handleNavClick(e, 'home')}
@@ -82,7 +109,7 @@ function App() {
               onClick={(e) => handleNavClick(e, 'contact')}
               className={activeSection === 'contact' ? 'active' : ''}
             >{t('nav.contact')}</a></li>
-            <li style={{display: 'flex', gap: '0.5rem'}}>
+            <li className="language-buttons">
               <button 
                 onClick={() => changeLanguage('en')}
                 style={{
