@@ -555,3 +555,41 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] nav .container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 3rem;
+}
+
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .timeline-item::before {
+  left: auto;
+  right: -3.5rem;
+}
+
+[dir="rtl"] h2::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .expertise-list li {
+  border-left: none;
+  border-right: 4px solid #3b82f6;
+}
+
+[dir="rtl"] .expertise-list li:hover {
+  transform: translateX(-10px);
+}

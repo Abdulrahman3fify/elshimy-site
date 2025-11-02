@@ -1,8 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './App.css';
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [activeSection, setActiveSection] = useState('home');
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lng;
+  };
+
+  useEffect(() => {
+    // Set initial direction based on current language
+    const currentLang = i18n.language || 'en';
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = currentLang;
+  }, [i18n.language]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,32 +56,64 @@ function App() {
       <nav>
         <div className="container">
           <div className="logo">ELSHIMY<span>TRADE</span></div>
-          <ul>
+          <ul style={{display: 'flex', alignItems: 'center', gap: '2rem'}}>
             <li><a 
               href="#home" 
               onClick={(e) => handleNavClick(e, 'home')}
               className={activeSection === 'home' ? 'active' : ''}
-            >Home</a></li>
+            >{t('nav.home')}</a></li>
             <li><a 
               href="#about" 
               onClick={(e) => handleNavClick(e, 'about')}
               className={activeSection === 'about' ? 'active' : ''}
-            >About</a></li>
+            >{t('nav.about')}</a></li>
             <li><a 
               href="#services" 
               onClick={(e) => handleNavClick(e, 'services')}
               className={activeSection === 'services' ? 'active' : ''}
-            >Services</a></li>
+            >{t('nav.services')}</a></li>
             <li><a 
               href="#experience" 
               onClick={(e) => handleNavClick(e, 'experience')}
               className={activeSection === 'experience' ? 'active' : ''}
-            >Experience</a></li>
+            >{t('nav.experience')}</a></li>
             <li><a 
               href="#contact" 
               onClick={(e) => handleNavClick(e, 'contact')}
               className={activeSection === 'contact' ? 'active' : ''}
-            >Contact</a></li>
+            >{t('nav.contact')}</a></li>
+            <li style={{display: 'flex', gap: '0.5rem'}}>
+              <button 
+                onClick={() => changeLanguage('en')}
+                style={{
+                  background: i18n.language === 'en' ? '#3b82f6' : 'transparent',
+                  color: i18n.language === 'en' ? '#fff' : '#fff',
+                  border: '1px solid #3b82f6',
+                  padding: '0.4rem 0.8rem',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '0.9rem',
+                  fontWeight: '500'
+                }}
+              >
+                EN
+              </button>
+              <button 
+                onClick={() => changeLanguage('ar')}
+                style={{
+                  background: i18n.language === 'ar' ? '#3b82f6' : 'transparent',
+                  color: i18n.language === 'ar' ? '#fff' : '#fff',
+                  border: '1px solid #3b82f6',
+                  padding: '0.4rem 0.8rem',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '0.9rem',
+                  fontWeight: '500'
+                }}
+              >
+                AR
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
@@ -74,9 +121,9 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className="container">
-          <p>Engineering precision meets market expertise. Specializing in algorithmic trading combined with fundamental and economic analysis across all financial markets.</p>
-          <a href="#contact" className="cta-button" onClick={(e) => handleNavClick(e, 'contact')}>Get Consultation</a>
-          <a href="#services" className="cta-button cta-secondary" onClick={(e) => handleNavClick(e, 'services')}>Explore Services</a>
+          <p>{t('hero.description')}</p>
+          <a href="#contact" className="cta-button" onClick={(e) => handleNavClick(e, 'contact')}>{t('hero.getConsultation')}</a>
+          <a href="#services" className="cta-button cta-secondary" onClick={(e) => handleNavClick(e, 'services')}>{t('hero.exploreServices')}</a>
         </div>
       </section>
 
@@ -85,19 +132,19 @@ function App() {
         <div className="container">
           <div className="stat-item">
             <h3>10,000+</h3>
-            <p>Trading Positions</p>
+            <p>{t('stats.tradingPositions')}</p>
           </div>
           <div className="stat-item">
             <h3>40+</h3>
-            <p>International Clients</p>
+            <p>{t('stats.internationalClients')}</p>
           </div>
           <div className="stat-item">
             <h3>6</h3>
-            <p>Countries Served</p>
+            <p>{t('stats.countriesServed')}</p>
           </div>
           <div className="stat-item">
             <h3>6+</h3>
-            <p>Years of Trading Experience</p>
+            <p>{t('stats.yearsExperience')}</p>
           </div>
         </div>
       </div>
@@ -105,28 +152,28 @@ function App() {
       {/* About Section */}
       <section id="about" className="about">
         <div className="container">
-          <h2>About US</h2>
-          <p className="section-subtitle">Where Engineering Meets Financial Markets</p>
+          <h2>{t('about.title')}</h2>
+          <p className="section-subtitle">{t('about.subtitle')}</p>
           <div className="about-content">
             <div className="about-text">
-              <p>The company's journey began in 2020 with trading while honing skills in market analysis. Since then, the team has dedicated the last 6+ years as traders, executing over 10,000 trading positions and serving more than 40 retail traders across Jordan, Egypt, Oman, Turkey, Saudi Arabia, and Germany.</p>
+              <p>{t('about.paragraph1')}</p>
               
-              <p>As an Introducing Broker (IB) for FOREX TIME for over 5 years, the company has built a reputation for combining technical precision with deep fundamental and economic analysis, all powered by sophisticated trading algorithms.</p>
+              <p>{t('about.paragraph2')}</p>
             </div>
             
             <div>
               <ul className="expertise-list">
                 <li>
-                  <strong>📊 Trading Methodology</strong>
-                  Fundamentals + Economic Analysis + Algorithm Trading
+                  <strong>📊 {t('about.methodology')}</strong>
+                  {t('about.methodologyDesc')}
                 </li>
                 <li>
-                  <strong>🌍 Global Experience</strong>
-                  Clients from 6 countries across Middle East, Europe & Africa
+                  <strong>🌍 {t('about.globalExperience')}</strong>
+                  {t('about.globalExperienceDesc')}
                 </li>
                 <li>
-                  <strong>🤝 Industry Partnership</strong>
-                  IB for FOREX TIME (5+ years of trusted collaboration)
+                  <strong>🤝 {t('about.partnership')}</strong>
+                  {t('about.partnershipDesc')}
                 </li>
               </ul>
             </div>
@@ -137,32 +184,32 @@ function App() {
       {/* Services Section */}
       <section id="services">
         <div className="container">
-          <h2>My Services</h2>
-          <p className="section-subtitle">Comprehensive Trading Solutions for All Financial Markets</p>
+          <h2>{t('services.title')}</h2>
+          <p className="section-subtitle">{t('services.subtitle')}</p>
           
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon">💼</div>
-              <h3>Professional Consultation</h3>
-              <p>Personalized trading strategies tailored to your goals, risk tolerance, and market conditions. Benefit from 6+ years of full-time trading experience.</p>
+              <h3>{t('services.consultation.title')}</h3>
+              <p>{t('services.consultation.description')}</p>
             </div>
             
             <div className="service-card">
               <div className="service-icon">📈</div>
-              <h3>Account Management</h3>
-              <p>Let me manage your trading account with proven strategies combining fundamental analysis, economic indicators, and algorithmic execution.</p>
+              <h3>{t('services.accountManagement.title')}</h3>
+              <p>{t('services.accountManagement.description')}</p>
             </div>
             
             <div className="service-card">
               <div className="service-icon">📡</div>
-              <h3>Trading Signals</h3>
-              <p>Receive high-probability trading signals based on comprehensive market analysis across Forex, Stocks, Commodities, and Cryptocurrencies.</p>
+              <h3>{t('services.signals.title')}</h3>
+              <p>{t('services.signals.description')}</p>
             </div>
             
             <div className="service-card">
               <div className="service-icon">🤖</div>
-              <h3>Algorithmic Trading</h3>
-              <p>Custom trading algorithms leveraging my engineering background to automate strategies with precision timing and risk management.</p>
+              <h3>{t('services.algorithmic.title')}</h3>
+              <p>{t('services.algorithmic.description')}</p>
             </div>
           </div>
         </div>
@@ -171,32 +218,32 @@ function App() {
       {/* Experience Timeline */}
       <section id="experience" className="experience">
         <div className="container">
-          <h2>Company Milestones</h2>
-          <p className="section-subtitle">Building Excellence in Trading & Investment Solutions</p>
+          <h2>{t('experience.title')}</h2>
+          <p className="section-subtitle">{t('experience.subtitle')}</p>
           
           <div className="timeline">
             <div className="timeline-item">
               <div className="year">2019 - Present</div>
-              <h3>Global Client Portfolio Expansion</h3>
-              <p>Executed over 10,000+ trading positions across all major financial markets, serving 40+ institutional and retail clients spanning six countries: Jordan, Egypt, Oman, Turkey, Saudi Arabia, and Germany. Established reputation for consistent performance and strategic market analysis.</p>
+              <h3>{t('experience.milestone1.title')}</h3>
+              <p>{t('experience.milestone1.description')}</p>
             </div>
             
             <div className="timeline-item">
               <div className="year">2019 - Present</div>
-              <h3>Strategic Partnership with FOREX TIME</h3>
-              <p>Established and maintained 5+ year partnership as Introducing Broker for FOREX TIME, providing clients with access to premier brokerage services while ensuring exceptional service standards and market execution quality.</p>
+              <h3>{t('experience.milestone2.title')}</h3>
+              <p>{t('experience.milestone2.description')}</p>
             </div>
             
             <div className="timeline-item">
               <div className="year">2017 - 2020</div>
-              <h3>Proprietary Trading System Development</h3>
-              <p>Developed comprehensive trading methodology utilizing proprietary techniques for tracking economic indicators and identifying which markets they impact. Established specialized frameworks for analyzing quarterly earnings results and their correlation with stock price movements. Created the foundation for our unique approach combining quantitative precision with fundamental market analysis and algorithmic execution systems.</p>
+              <h3>{t('experience.milestone3.title')}</h3>
+              <p>{t('experience.milestone3.description')}</p>
             </div>
             
             <div className="timeline-item">
-              <div className="year">Foundation</div>
-              <h3>Engineering-Driven Market Approach</h3>
-              <p>Founded on principles of Electronics & Communications Engineering expertise, bringing systematic analytical frameworks, mathematical modeling capabilities, and algorithm development proficiency to financial market analysis and trading execution.</p>
+              <div className="year">{i18n.language === 'ar' ? 'التأسيس' : 'Foundation'}</div>
+              <h3>{t('experience.milestone4.title')}</h3>
+              <p>{t('experience.milestone4.description')}</p>
             </div>
           </div>
         </div>
@@ -205,17 +252,17 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
-          <h2>Contact Us</h2>
-          <p className="section-subtitle">Ready to elevate your trading? Let's discuss your investment goals</p>
+          <h2>{t('contact.title')}</h2>
+          <p className="section-subtitle">{t('contact.subtitle')}</p>
           
           <div className="contact-content">
             <div className="contact-info">
-              <h3 style={{marginBottom: '2rem', color: '#0f172a'}}>Contact Information</h3>
+              <h3 style={{marginBottom: '2rem', color: '#0f172a'}}>{t('contact.contactInfo')}</h3>
               
               <div className="contact-item">
                 <div className="contact-item-icon">📞</div>
                 <div>
-                  <h4>Phone</h4>
+                  <h4>{t('contact.phone')}</h4>
                   <p><a href="tel:+96892407907" style={{color: '#64748b', textDecoration: 'none'}}>+968 9240 7907</a></p>
                 </div>
               </div>
@@ -223,7 +270,7 @@ function App() {
               <div className="contact-item">
                 <div className="contact-item-icon">✉️</div>
                 <div>
-                  <h4>Email</h4>
+                  <h4>{t('contact.email')}</h4>
                   <p><a href="mailto:engineer.elshimy@gmail.com" style={{color: '#64748b', textDecoration: 'none'}}>engineer.elshimy@gmail.com</a></p>
                 </div>
               </div>
@@ -231,7 +278,7 @@ function App() {
               <div className="contact-item">
                 <div className="contact-item-icon">📍</div>
                 <div>
-                  <h4>Address</h4>
+                  <h4>{t('contact.address')}</h4>
                   <p>Flat: 21, Way 3360, Building: 1/A/5478<br />Block: 333 - Elkhoud, Seeb<br />Muscat, Oman</p>
                 </div>
               </div>
@@ -239,7 +286,7 @@ function App() {
               <div className="contact-item">
                 <div className="contact-item-icon">💼</div>
                 <div>
-                  <h4>Business</h4>
+                  <h4>{t('contact.business')}</h4>
                   <p>ELSHIMY FOR TRADE AND INVESTMENT</p>
                 </div>
               </div>
@@ -247,7 +294,7 @@ function App() {
               <div className="contact-item">
                 <div className="contact-item-icon">🤝</div>
                 <div>
-                  <h4>Partnership</h4>
+                  <h4>{t('contact.partnership')}</h4>
                   <p><a href="https://forextime.com/?Referral=35310" target="_blank" rel="noopener noreferrer" style={{color: '#3b82f6', textDecoration: 'none'}}>IB for FOREX TIME (5+ years)</a></p>
                 </div>
               </div>
@@ -257,7 +304,7 @@ function App() {
                   <img src="/linkedin-icon.svg" alt="LinkedIn" style={{width: '1.5rem', height: '1.5rem'}} />
                 </div>
                 <div>
-                  <h4>LinkedIn</h4>
+                  <h4>{t('contact.linkedin')}</h4>
                   <p><a href="https://www.linkedin.com/company/elshimy-for-trade-and-investment/" target="_blank" rel="noopener noreferrer" style={{color: '#0a66c2', textDecoration: 'none', fontWeight: '600'}}>@ElshimyForTrade</a></p>
                 </div>
               </div>
@@ -269,8 +316,8 @@ function App() {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>&copy; ELSHIMY FOR TRADE AND INVESTMENT. All rights reserved.</p>
-          <p style={{marginTop: '0.5rem', fontSize: '0.9rem'}}>Professional Trader | Investment Specialist | Money Expo Oman Speaker</p>
+          <p>&copy; {t('footer.copyright')}</p>
+          <p style={{marginTop: '0.5rem', fontSize: '0.9rem'}}>{t('footer.tagline')}</p>
         </div>
       </footer>
     </div>

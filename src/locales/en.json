@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "description": "Engineering precision meets market expertise. Specializing in algorithmic trading combined with fundamental and economic analysis across all financial markets.",
+    "getConsultation": "Get Consultation",
+    "exploreServices": "Explore Services"
+  },
+  "stats": {
+    "tradingPositions": "Trading Positions",
+    "internationalClients": "International Clients",
+    "countriesServed": "Countries Served",
+    "yearsExperience": "Years of Trading Experience"
+  },
+  "about": {
+    "title": "About US",
+    "subtitle": "Where Engineering Meets Financial Markets",
+    "paragraph1": "The company's journey began in 2020 with trading while honing skills in market analysis. Since then, the team has dedicated the last 6+ years as traders, executing over 10,000 trading positions and serving more than 40 retail traders across Jordan, Egypt, Oman, Turkey, Saudi Arabia, and Germany.",
+    "paragraph2": "As an Introducing Broker (IB) for FOREX TIME for over 5 years, the company has built a reputation for combining technical precision with deep fundamental and economic analysis, all powered by sophisticated trading algorithms.",
+    "methodology": "Trading Methodology",
+    "methodologyDesc": "Fundamentals + Economic Analysis + Algorithm Trading",
+    "globalExperience": "Global Experience",
+    "globalExperienceDesc": "Clients from 6 countries across Middle East, Europe & Africa",
+    "partnership": "Industry Partnership",
+    "partnershipDesc": "IB for FOREX TIME (5+ years of trusted collaboration)"
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "Comprehensive Trading Solutions for All Financial Markets",
+    "consultation": {
+      "title": "Professional Consultation",
+      "description": "Personalized trading strategies tailored to your goals, risk tolerance, and market conditions. Benefit from 6+ years of full-time trading experience."
+    },
+    "accountManagement": {
+      "title": "Account Management",
+      "description": "Let me manage your trading account with proven strategies combining fundamental analysis, economic indicators, and algorithmic execution."
+    },
+    "signals": {
+      "title": "Trading Signals",
+      "description": "Receive high-probability trading signals based on comprehensive market analysis across Forex, Stocks, Commodities, and Cryptocurrencies."
+    },
+    "algorithmic": {
+      "title": "Algorithmic Trading",
+      "description": "Custom trading algorithms leveraging my engineering background to automate strategies with precision timing and risk management."
+    }
+  },
+  "experience": {
+    "title": "Company Milestones",
+    "subtitle": "Building Excellence in Trading & Investment Solutions",
+    "milestone1": {
+      "title": "Global Client Portfolio Expansion",
+      "description": "Executed over 10,000+ trading positions across all major financial markets, serving 40+ institutional and retail clients spanning six countries: Jordan, Egypt, Oman, Turkey, Saudi Arabia, and Germany. Established reputation for consistent performance and strategic market analysis."
+    },
+    "milestone2": {
+      "title": "Strategic Partnership with FOREX TIME",
+      "description": "Established and maintained 5+ year partnership as Introducing Broker for FOREX TIME, providing clients with access to premier brokerage services while ensuring exceptional service standards and market execution quality."
+    },
+    "milestone3": {
+      "title": "Proprietary Trading System Development",
+      "description": "Developed comprehensive trading methodology utilizing proprietary techniques for tracking economic indicators and identifying which markets they impact. Established specialized frameworks for analyzing quarterly earnings results and their correlation with stock price movements. Created the foundation for our unique approach combining quantitative precision with fundamental market analysis and algorithmic execution systems."
+    },
+    "milestone4": {
+      "title": "Engineering-Driven Market Approach",
+      "description": "Founded on principles of Electronics & Communications Engineering expertise, bringing systematic analytical frameworks, mathematical modeling capabilities, and algorithm development proficiency to financial market analysis and trading execution."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to elevate your trading? Let's discuss your investment goals",
+    "contactInfo": "Contact Information",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "business": "Business",
+    "partnership": "Partnership",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "ELSHIMY FOR TRADE AND INVESTMENT. All rights reserved.",
+    "tagline": "Professional Trader | Investment Specialist | Money Expo Oman Speaker"
+  }
+}
+
+
