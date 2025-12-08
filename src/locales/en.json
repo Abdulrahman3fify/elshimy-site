@@ -34,20 +34,115 @@
     "subtitle": "Comprehensive Trading Solutions for All Financial Markets",
     "consultation": {
       "title": "Professional Consultation",
-      "description": "Personalized trading strategies tailored to your goals, risk tolerance, and market conditions. Benefit from 6+ years of full-time trading experience."
+      "description": "Personalized trading strategies tailored to your goals, risk tolerance, and market conditions. Benefit from 6+ years of full-time trading experience.",
+      "brief": "Get personalized trading strategies tailored to your goals with 6+ years of experience.",
+      "details": [
+        "Initial portfolio analysis and risk assessment",
+        "Custom trading strategy development based on your goals",
+        "Market analysis and entry/exit point recommendations",
+        "Risk management framework implementation",
+        "Regular strategy review and optimization sessions",
+        "Educational guidance on trading fundamentals"
+      ],
+      "duration": "1-2 hours per session",
+      "pricing": "Starting from $150/session"
     },
     "accountManagement": {
       "title": "Account Management",
-      "description": "Let me manage your trading account with proven strategies combining fundamental analysis, economic indicators, and algorithmic execution."
+      "description": "Let me manage your trading account with proven strategies combining fundamental analysis, economic indicators, and algorithmic execution.",
+      "brief": "Professional account management with proven strategies combining fundamental analysis and algorithmic execution.",
+      "details": [
+        "Full account management with transparent reporting",
+        "Daily trade execution and monitoring",
+        "Risk-adjusted position sizing",
+        "Monthly performance reports and analysis",
+        "24/7 market monitoring and adjustment",
+        "Minimum account size: $5,000"
+      ],
+      "duration": "Ongoing management",
+      "pricing": "Performance-based fee structure"
     },
     "signals": {
       "title": "Trading Signals",
-      "description": "Receive high-probability trading signals based on comprehensive market analysis across Forex, Stocks, Commodities, and Cryptocurrencies."
+      "description": "Receive high-probability trading signals based on comprehensive market analysis across Forex, Stocks, Commodities, and Cryptocurrencies.",
+      "brief": "Receive high-probability trading signals based on comprehensive market analysis across all major markets.",
+      "details": [
+        "Real-time trading signals via Telegram/Email",
+        "Entry, stop-loss, and take-profit levels",
+        "Market analysis and rationale for each signal",
+        "Signals for Forex, Stocks, Commodities, and Crypto",
+        "Average 15-20 signals per month",
+        "Historical win rate: 65-75%"
+      ],
+      "duration": "Monthly subscription",
+      "pricing": "Starting from $99/month"
     },
     "algorithmic": {
-      "title": "Algorithmic Trading",
-      "description": "Custom trading algorithms leveraging my engineering background to automate strategies with precision timing and risk management."
-    }
+      "title": "Trading Powered by Real-Time Economic Data",
+      "description": "A New Generation of Trading Solutions - We provide advanced trading services built on economic data at the exact moment it's released, giving you the speed, accuracy, and confidence needed to act effectively in fast-moving markets.",
+      "brief": "Advanced trading services built on economic data at the exact moment it's released. Transform market volatility into opportunity.",
+      "subtitle": "We transform market volatility created by economic releases from risk… into opportunity.",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "Instant Speed",
+          "description": "We detect official economic releases the moment they drop and convert them immediately into clear trading signals."
+        },
+        {
+          "icon": "🎯",
+          "title": "No Guesswork",
+          "description": "No reliance on outdated patterns or slow market reactions. Just real facts, in real time."
+        },
+        {
+          "icon": "🔍",
+          "title": "Smart Contextual Analysis",
+          "description": "We compare the actual figures against market pricing before the release to identify direction with exceptional accuracy."
+        },
+        {
+          "icon": "📈",
+          "title": "A Genuine Competitive Edge",
+          "description": "Capture the earliest market moves and take advantage of the seconds that matter most."
+        }
+      ],
+      "whyChoose": {
+        "title": "Why Choose Our Service?",
+        "points": [
+          "Real-time analysis of key economic indicators",
+          "Immediate interpretation of data surprises",
+          "Clear, actionable trading signals",
+          "Solutions for professional traders, financial firms, and funds"
+        ]
+      },
+      "whatWeDeliver": {
+        "title": "What We Deliver",
+        "points": [
+          "Real-time analysis of key economic indicators",
+          "Immediate interpretation of data surprises",
+          "Clear, actionable trading signals",
+          "Solutions for professional traders, financial firms, and funds"
+        ]
+      },
+      "result": {
+        "title": "The Result",
+        "description": "Faster decisions. Clearer signals. Better performance. Because the market doesn't wait — and neither should you."
+      },
+      "contact": {
+        "info": "Info@elshimy.net",
+        "support": "Support@elshimy.net"
+      },
+      "duration": "Real-time service",
+      "pricing": "Contact for pricing"
+    },
+    "expand": "Learn More",
+    "collapse": "Show Less",
+    "viewDetails": "View Full Details",
+    "backToServices": "Back to Services",
+    "fullDescription": "Full Description",
+    "keyFeatures": "Key Features",
+    "whatsIncluded": "What's Included",
+    "duration": "Duration",
+    "pricing": "Pricing",
+    "contactUs": "Contact Us"
   },
   "experience": {
     "title": "Company Milestones",

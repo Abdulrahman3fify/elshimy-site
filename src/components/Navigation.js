@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Navigation({
   activeSection,
@@ -8,6 +9,35 @@ function Navigation({
   handleNavClick,
 }) {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClickWithRoute = (e, targetId) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    } else if (handleNavClick) {
+      handleNavClick(e, targetId);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -41,7 +71,7 @@ function Navigation({
           <li>
             <a
               href="#home"
-              onClick={(e) => handleNavClick(e, "home")}
+              onClick={(e) => handleNavClickWithRoute(e, "home")}
               className={activeSection === "home" ? "active" : ""}
             >
               {t("nav.home")}
@@ -50,7 +80,7 @@ function Navigation({
           <li>
             <a
               href="#about"
-              onClick={(e) => handleNavClick(e, "about")}
+              onClick={(e) => handleNavClickWithRoute(e, "about")}
               className={activeSection === "about" ? "active" : ""}
             >
               {t("nav.about")}
@@ -59,7 +89,7 @@ function Navigation({
           <li>
             <a
               href="#services"
-              onClick={(e) => handleNavClick(e, "services")}
+              onClick={(e) => handleNavClickWithRoute(e, "services")}
               className={activeSection === "services" ? "active" : ""}
             >
               {t("nav.services")}
@@ -68,7 +98,7 @@ function Navigation({
           <li>
             <a
               href="#experience"
-              onClick={(e) => handleNavClick(e, "experience")}
+              onClick={(e) => handleNavClickWithRoute(e, "experience")}
               className={activeSection === "experience" ? "active" : ""}
             >
               {t("nav.experience")}
@@ -77,7 +107,7 @@ function Navigation({
           <li>
             <a
               href="#contact"
-              onClick={(e) => handleNavClick(e, "contact")}
+              onClick={(e) => handleNavClickWithRoute(e, "contact")}
               className={activeSection === "contact" ? "active" : ""}
             >
               {t("nav.contact")}
