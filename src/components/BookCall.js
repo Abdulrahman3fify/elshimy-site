@@ -13,7 +13,7 @@ function BookCall() {
   const openCalendly = () => {
     const calendlyUrl =
       process.env.REACT_APP_CALENDLY_URL ||
-      "https://calendly.com/abdulrahmanafify-95/30min";
+      "https://calendly.com/engineer-elshimy/30min";
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
         url: calendlyUrl,
@@ -47,4 +47,3 @@ function BookCall() {
 }
 
 export default BookCall;
-
