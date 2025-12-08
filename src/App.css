@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
@@ -20,7 +20,7 @@ nav {
   backdrop-filter: blur(10px);
   padding: 1rem 5%;
   z-index: 1000;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 nav .container {
@@ -102,13 +102,14 @@ nav a.active {
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="rgba(59,130,246,0.1)" stroke-width="2" fill="none"/></svg>') repeat;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="rgba(59,130,246,0.1)" stroke-width="2" fill="none"/></svg>')
+    repeat;
   opacity: 0.3;
 }
 
@@ -186,7 +187,7 @@ nav a.active {
 .stats {
   background: #fff;
   padding: 3rem 5%;
-  box-shadow: 0 -5px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   margin-top: -50px;
   z-index: 10;
@@ -231,7 +232,7 @@ h2 {
 }
 
 h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -277,7 +278,7 @@ h2::after {
   background: #fff;
   border-left: 4px solid #3b82f6;
   border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
 }
 
@@ -304,14 +305,14 @@ h2::after {
   background: #fff;
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
   border-top: 4px solid #3b82f6;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .service-icon {
@@ -353,7 +354,7 @@ h2::after {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -368,7 +369,7 @@ h2::after {
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -3.5rem;
   top: 0;
@@ -401,17 +402,26 @@ h2::after {
 }
 
 .contact-content {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   margin-top: 3rem;
+  align-items: start;
 }
 
 .contact-info {
   background: #fff;
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.contact-form {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   width: 100%;
 }
 
@@ -436,13 +446,6 @@ h2::after {
   color: #64748b;
 }
 
-.contact-form {
-  background: #fff;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -462,7 +465,7 @@ h2::after {
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-group input:focus,
@@ -554,12 +557,92 @@ textarea:disabled {
 footer {
   background: #0f172a;
   color: #fff;
-  padding: 2rem 5%;
+  padding: 3rem 5% 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-contact-info p {
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+}
+
+.footer-contact-info a {
+  transition: color 0.3s;
+}
+
+.footer-contact-info a:hover {
+  color: #3b82f6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #3b82f6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  background: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
 }
 
-footer p {
+.footer-bottom p {
   opacity: 0.8;
+  margin: 0;
 }
 
 /* Responsive */
@@ -567,21 +650,41 @@ footer p {
   .hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero .highlight {
     font-size: 2rem;
   }
-  
-  .about-content,
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .logo {
     font-size: 1.2rem;
   }
@@ -727,4 +830,21 @@ footer p {
 
 [dir="rtl"] .expertise-list li:hover {
   transform: translateX(-10px);
+}
+
+[dir="rtl"] .form-status {
+  border-left: none;
+  border-right: 4px solid;
+}
+
+[dir="rtl"] .form-status.submitting {
+  border-right-color: #3b82f6;
+}
+
+[dir="rtl"] .form-status.success {
+  border-right-color: #22c55e;
+}
+
+[dir="rtl"] .form-status.error {
+  border-right-color: #ef4444;
 }
