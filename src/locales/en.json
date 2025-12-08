@@ -92,7 +92,11 @@
     "send": "Send Message",
     "sending": "Sending...",
     "success": "Thank you! Your message has been sent successfully.",
-    "error": "Oops! Something went wrong. Please try again later."
+    "error": "Oops! Something went wrong. Please try again later.",
+    "bookCall": "Book a Call",
+    "bookCallTitle": "Schedule a Consultation",
+    "bookCallDescription": "Book a personalized consultation call to discuss your trading goals and investment strategies.",
+    "bookCallButton": "Schedule Now"
   },
   "footer": {
     "copyright": "ELSHIMY FOR TRADE AND INVESTMENT. All rights reserved.",

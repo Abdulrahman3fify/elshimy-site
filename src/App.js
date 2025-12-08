@@ -8,6 +8,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import BookCall from "./components/BookCall";
 import Footer from "./components/Footer";
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
       <About />
       <Services />
       <Experience />
+      <BookCall />
       <Contact />
       <Footer handleNavClick={handleNavClick} />
     </div>

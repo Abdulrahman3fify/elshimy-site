@@ -90,8 +90,8 @@ function Contact() {
         <h2>{t("contact.title")}</h2>
         <p className="section-subtitle">{t("contact.subtitle")}</p>
 
-        <div className="contact-content">
-          <div className="contact-info">
+        <div>
+          {/* <div className="contact-info">
             <h3 style={{ marginBottom: "2rem", color: "#0f172a" }}>
               {t("contact.contactInfo")}
             </h3>
@@ -198,7 +198,7 @@ function Contact() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="contact-form">
             <h3 style={{ marginBottom: "0.5rem", color: "#0f172a" }}>

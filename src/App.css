@@ -396,9 +396,108 @@ h2::after {
   line-height: 1.7;
 }
 
-/* Contact Section */
-.contact {
+/* Book Call Section */
+.book-call-section {
+  background: #fff;
+  padding: 80px 5% 20px 5%;
+}
+
+.book-call-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Book a Call Card */
+.book-call-card {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* .book-call-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: pulse 3s ease-in-out infinite;
+} */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.book-call-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.book-call-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.book-call-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.book-call-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.book-call-button {
+  background: #fff;
+  color: #3b82f6;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.book-call-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   background: #f8fafc;
+}
+
+.book-call-button:active {
+  transform: translateY(0);
 }
 
 .contact-content {
@@ -423,6 +522,7 @@ h2::after {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   width: 100%;
+  margin-top: 40px;
 }
 
 .contact-item {
@@ -661,8 +761,27 @@ footer {
   }
 
   .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    /* grid-template-columns: 1fr; */
+    /* gap: 2rem; */
+  }
+
+  .book-call-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .book-call-icon {
+    font-size: 3rem;
+  }
+
+  .book-call-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .book-call-content p {
+    font-size: 1rem;
   }
 
   .footer-content {
