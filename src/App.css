@@ -736,6 +736,12 @@ h2::after {
   margin-bottom: 1rem;
 }
 
+.service-result-title {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
 .service-result-description {
   color: #fff;
   font-size: 1.05rem;

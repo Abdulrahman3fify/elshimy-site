@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navigation from "./Navigation";
@@ -7,6 +7,15 @@ function ServiceDetail() {
   const { serviceKey } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    // Scroll to top when component mounts or serviceKey changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [serviceKey]);
 
   const services = {
     algorithmic: { icon: "🤖" },
@@ -25,7 +34,10 @@ function ServiceDetail() {
           setMobileMenuOpen={() => {}}
           handleNavClick={() => {}}
         />
-        <div className="container" style={{ padding: "100px 5%", textAlign: "center" }}>
+        <div
+          className="container"
+          style={{ padding: "100px 5%", textAlign: "center" }}
+        >
           <h2>Service Not Found</h2>
           <button onClick={() => navigate("/")} className="cta-button">
             Go Home
@@ -65,10 +77,7 @@ function ServiceDetail() {
       />
       <section className="service-detail-section">
         <div className="container">
-          <button
-            onClick={() => navigate("/")}
-            className="back-button"
-          >
+          <button onClick={() => navigate("/")} className="back-button">
             ← {t("services.backToServices")}
           </button>
 
@@ -139,7 +148,7 @@ function ServiceDetail() {
 
                 {result && (
                   <div className="service-result">
-                    <h2>{result.title}</h2>
+                    <h2 className="service-result-title">{result.title}</h2>
                     <p className="service-result-description">
                       {result.description}
                     </p>
@@ -186,25 +195,6 @@ function ServiceDetail() {
                 )}
               </>
             )}
-
-            <div className="service-detail-meta">
-              <div className="service-meta-item">
-                <span className="service-meta-label">
-                  {t("services.duration")}:
-                </span>
-                <span className="service-meta-value">
-                  {t(`services.${serviceKey}.duration`)}
-                </span>
-              </div>
-              <div className="service-meta-item">
-                <span className="service-meta-label">
-                  {t("services.pricing")}:
-                </span>
-                <span className="service-meta-value">
-                  {t(`services.${serviceKey}.pricing`)}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -213,4 +203,3 @@ function ServiceDetail() {
 }
 
 export default ServiceDetail;
-

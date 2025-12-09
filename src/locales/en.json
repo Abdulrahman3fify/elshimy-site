@@ -78,7 +78,7 @@
       "pricing": "Starting from $99/month"
     },
     "algorithmic": {
-      "title": "Trading Powered by Real-Time Economic Data",
+      "title": "Algorithmic Trading",
       "description": "A New Generation of Trading Solutions - We provide advanced trading services built on economic data at the exact moment it's released, giving you the speed, accuracy, and confidence needed to act effectively in fast-moving markets.",
       "brief": "Advanced trading services built on economic data at the exact moment it's released. Transform market volatility into opportunity.",
       "subtitle": "We transform market volatility created by economic releases from risk… into opportunity.",
@@ -201,5 +201,3 @@
     "followUs": "Follow Us"
   }
 }
-
-
