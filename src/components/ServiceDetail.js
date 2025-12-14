@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navigation from "./Navigation";
@@ -7,6 +7,7 @@ function ServiceDetail() {
   const { serviceKey } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({
@@ -15,6 +16,18 @@ function ServiceDetail() {
       behavior: "smooth",
     });
   }, [serviceKey]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   const services = {
     algorithmic: { icon: "🤖" },
@@ -29,8 +42,8 @@ function ServiceDetail() {
       <div>
         <Navigation
           activeSection=""
-          mobileMenuOpen={false}
-          setMobileMenuOpen={() => {}}
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
           handleNavClick={() => {}}
         />
         <div
@@ -73,8 +86,8 @@ function ServiceDetail() {
     <div className="App">
       <Navigation
         activeSection=""
-        mobileMenuOpen={false}
-        setMobileMenuOpen={() => {}}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
         handleNavClick={() => {}}
       />
       <section className="service-detail-section">
@@ -92,9 +105,9 @@ function ServiceDetail() {
             <div className="service-detail-icon">{service.icon}</div>
             <div>
               <h1>{t(`services.${serviceKey}.title`)}</h1>
-              {t(`services.${serviceKey}.subtitle`) && (
+              {t(`services.${serviceKey}.description`) && (
                 <p className="service-detail-subtitle">
-                  {t(`services.${serviceKey}.subtitle`)}
+                  {t(`services.${serviceKey}.description`)}
                 </p>
               )}
             </div>
