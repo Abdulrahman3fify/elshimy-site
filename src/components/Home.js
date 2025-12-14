@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 import Hero from "./Hero";
 import Stats from "./Stats";
@@ -12,11 +13,11 @@ import Footer from "./Footer";
 
 function Home() {
   const { i18n } = useTranslation();
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Set initial direction based on current language
     const currentLang = i18n.language || "en";
     document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = currentLang;
@@ -42,7 +43,6 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    // Prevent body scroll when mobile menu is open
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -54,6 +54,54 @@ function Home() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (location.state?.scrollToServices) {
+      setTimeout(() => {
+        const servicesSection = document.getElementById("services");
+        if (servicesSection) {
+          servicesSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    } else {
+      const savedScrollPosition = sessionStorage.getItem("homeScrollPosition");
+      if (savedScrollPosition) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: parseInt(savedScrollPosition, 10),
+            behavior: "auto",
+          });
+          sessionStorage.removeItem("homeScrollPosition");
+        }, 50);
+      }
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      sessionStorage.setItem(
+        "homeScrollPosition",
+        window.pageYOffset.toString()
+      );
+    };
+
+    const saveScrollPosition = () => {
+      sessionStorage.setItem(
+        "homeScrollPosition",
+        window.pageYOffset.toString()
+      );
+    };
+
+    const scrollInterval = setInterval(saveScrollPosition, 500);
+
+    return () => {
+      clearInterval(scrollInterval);
+      handleBeforeUnload();
+    };
+  }, []);
+
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -62,7 +110,6 @@ function Home() {
         behavior: "smooth",
         block: "start",
       });
-      // Close mobile menu after clicking
       setMobileMenuOpen(false);
     }
   };
@@ -78,7 +125,7 @@ function Home() {
       <Hero handleNavClick={handleNavClick} />
       <Stats />
       <About />
-      <Services />
+      <Services serviceKeyToExpand={location.state?.serviceKey} />
       <Experience />
       <BookCall />
       <Contact />
@@ -88,4 +135,3 @@ function Home() {
 }
 
 export default Home;
-

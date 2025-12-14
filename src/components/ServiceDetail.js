@@ -9,7 +9,6 @@ function ServiceDetail() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    // Scroll to top when component mounts or serviceKey changes
     window.scrollTo({
       top: 0,
       left: 0,
@@ -39,7 +38,10 @@ function ServiceDetail() {
           style={{ padding: "100px 5%", textAlign: "center" }}
         >
           <h2>Service Not Found</h2>
-          <button onClick={() => navigate("/")} className="cta-button">
+          <button
+            onClick={() => navigate("/", { state: { scrollToServices: true } })}
+            className="cta-button"
+          >
             Go Home
           </button>
         </div>
@@ -77,7 +79,12 @@ function ServiceDetail() {
       />
       <section className="service-detail-section">
         <div className="container">
-          <button onClick={() => navigate("/")} className="back-button">
+          <button
+            onClick={() =>
+              navigate("/", { state: { scrollToServices: true, serviceKey } })
+            }
+            className="back-button"
+          >
             ← {t("services.backToServices")}
           </button>
 

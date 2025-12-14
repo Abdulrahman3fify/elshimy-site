@@ -1,11 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function Services() {
+function Services({ serviceKeyToExpand }) {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [expandedService, setExpandedService] = useState("algorithmic");
+
+  const [expandedService, setExpandedService] = useState(() => {
+    if (serviceKeyToExpand) {
+      return serviceKeyToExpand;
+    }
+    const saved = sessionStorage.getItem("expandedService");
+    return saved || "algorithmic";
+  });
+
+  useEffect(() => {
+    if (serviceKeyToExpand) {
+      setExpandedService(serviceKeyToExpand);
+      sessionStorage.setItem("expandedService", serviceKeyToExpand);
+    }
+  }, [serviceKeyToExpand]);
+
+  useEffect(() => {
+    if (expandedService) {
+      sessionStorage.setItem("expandedService", expandedService);
+    }
+  }, [expandedService]);
 
   const services = [
     {
@@ -32,6 +52,9 @@ function Services() {
 
   const handleViewDetails = (serviceKey, e) => {
     e.stopPropagation(); // Prevent the accordion from toggling
+    // Save current scroll position and expanded service before navigating
+    sessionStorage.setItem("homeScrollPosition", window.pageYOffset.toString());
+    sessionStorage.setItem("expandedService", serviceKey);
     navigate(`/service/${serviceKey}`);
   };
 
